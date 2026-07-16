@@ -12,7 +12,10 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <link rel="stylesheet" href="css/style.css">
-
+    <link
+rel="stylesheet"
+href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.awesome-markers/2.0.4/leaflet.awesome-markers.css">
     <title>MealBridge</title>
 </head>
 
@@ -161,28 +164,9 @@ Restaurant Portal
 View nearby restaurants with available surplus food.
 
 </p>
-
 <div class="map-container">
 
-<div class="map-placeholder">
-
-<i class="fa-solid fa-location-dot"></i>
-
-<h3>Interactive Map</h3>
-
-<p>
-
-Nearby food donations will appear here.
-
-</p>
-
-<button>
-
-Open Live Map
-
-</button>
-
-</div>
+  <div id="map"></div>
 
 </div>
 
@@ -206,16 +190,6 @@ Open Live Map
 
 <p>Restaurants</p>
 
-
-
-
-
-
-
-<script src="js/script.js"></script>
-
-</body>
-</html>
 <footer>
 
 <p>
@@ -225,3 +199,13 @@ Open Live Map
 </p>
 
 </footer>
+
+
+
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.awesome-markers/2.0.4/leaflet.awesome-markers.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
