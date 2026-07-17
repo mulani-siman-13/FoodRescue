@@ -1,5 +1,8 @@
 console.log("script.js loaded");
 // Initialize the map
+const mapElement = document.getElementById("map");
+
+if (mapElement) {
 var map = L.map('map').setView([18.5204, 73.8567], 12);
 
 // Add OpenStreetMap tiles
@@ -33,3 +36,19 @@ L.marker([18.5602,73.8075]).addTo(map)
 
 L.marker([18.5318,73.8477]).addTo(map)
 .bindPopup("<b>Hotel Rupali</b><br>🥘 21 Meals Available");
+}
+
+const analyzeBtn = document.getElementById("analyzeBtn");
+
+if (analyzeBtn) {
+    analyzeBtn.addEventListener("click", () => {
+        const image = document.getElementById("foodImage");
+
+        if (!image.files.length) {
+            alert("Please select a food image first.");
+            return;
+        }
+
+        alert("Image selected successfully! 🎉");
+    });
+}
