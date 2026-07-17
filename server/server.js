@@ -32,9 +32,20 @@ app.get("/test-ai", async (req, res) => {
 
         res.send(response.text);
     } catch (error) {
-        console.error(error);
-        res.status(500).send("Gemini Error");
+    console.error(error);
+
+    if (error.status === 503) {
+        return res.status(503).json({
+            success: false,
+            message: "🤖 AI service is currently busy. Please try again in a few minutes."
+        });
     }
+
+    return res.status(500).json({
+        success: false,
+        message: "Unable to analyze the image right now."
+    });
+}
 });
 
 app.post("/analyze-food", upload.single("foodImage"), async (req, res) => {
@@ -48,7 +59,7 @@ app.post("/analyze-food", upload.single("foodImage"), async (req, res) => {
 
 
         console.log("Image received:", req.file.originalname);
-console.log("Image received:", req.file.originalname);
+
 
 const imageBase64 = req.file.buffer.toString("base64");
 
@@ -65,29 +76,56 @@ const response = await ai.models.generateContent({
             text: `
 You are a food donation assistant.
 
-Analyze this image and reply ONLY in this format:
+Analyze the uploaded food image.
 
-Food:
-Estimated Meals:
-Freshness:
-Pickup Before:
+Reply ONLY with valid JSON.
+
+Do not add explanations.
+Do not use markdown.
+Do not use \`\`\`json.
+
+Use exactly this format:
+
+{
+  "food": "",
+  "estimatedMeals": "",
+  "freshness": "",
+  "pickupBefore": ""
+}
 `
         }
     ]
 });
 
+let cleanedText = response.text.trim();
+
+cleanedText = cleanedText
+    .replace(/```json/g, "")
+    .replace(/```/g, "")
+    .trim();
+
+const analysis = JSON.parse(cleanedText);
+
 res.json({
     success: true,
-    analysis: response.text
+    analysis
 });
 
     } catch (error) {
-        console.error(error);
-        res.status(500).json({
+    console.error(error);
+
+    if (error.status === 503) {
+        return res.status(503).json({
             success: false,
-            message: "Server error"
+            message: "🤖 AI service is currently busy. Please try again in a few minutes."
         });
     }
+
+    return res.status(500).json({
+        success: false,
+        message: "Unable to analyze the image right now."
+    });
+}
 });
 
 const PORT = 3000;

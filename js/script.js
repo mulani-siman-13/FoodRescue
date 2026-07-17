@@ -42,12 +42,15 @@ const analyzeBtn = document.getElementById("analyzeBtn");
 
 if (analyzeBtn) {
     analyzeBtn.addEventListener("click", () => {
+        const button = analyzeBtn;
         const image = document.getElementById("foodImage");
 
         if (!image.files.length) {
             alert("Please select a food image first.");
             return;
         }
+     button.disabled = true;
+button.innerHTML = "⏳ Analyzing...";   
 
         const formData = new FormData();
 formData.append("foodImage", image.files[0]);
@@ -56,14 +59,45 @@ fetch("http://localhost:3000/analyze-food", {
     method: "POST",
     body: formData
 })
-.then(response => response.json())
+.then(async response => {
+
+    const data = await response.json();
+
+    if (!response.ok) {
+        throw new Error(data.message || "Something went wrong.");
+    }
+
+    return data;
+
+})
 .then(data => {
     console.log(data);
-    alert(data.analysis);
+
+    const analysis = data.analysis;
+
+document.getElementById("foodName").textContent =
+    analysis.food;
+
+document.getElementById("mealCount").textContent =
+    analysis.estimatedMeals;
+
+document.getElementById("freshness").textContent =
+    analysis.freshness;
+
+document.getElementById("pickupTime").textContent =
+    analysis.pickupBefore;
+    button.disabled = false;
+button.innerHTML = "Analyze & Submit";
 })
 .catch(error => {
+
     console.error(error);
-    alert("Failed to send image.");
+
+    alert(error.message);
+
+    button.disabled = false;
+    button.innerHTML = "Analyze & Submit";
+
 });
-    });
+});
 }
