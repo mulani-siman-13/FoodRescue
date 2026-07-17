@@ -46,13 +46,40 @@ app.post("/analyze-food", upload.single("foodImage"), async (req, res) => {
             });
         }
 
-        console.log("Image received:", req.file.originalname);
 
-        res.json({
-            success: true,
-            message: "Image received successfully!",
-            fileName: req.file.originalname
-        });
+        console.log("Image received:", req.file.originalname);
+console.log("Image received:", req.file.originalname);
+
+const imageBase64 = req.file.buffer.toString("base64");
+
+const response = await ai.models.generateContent({
+    model: "gemini-3.5-flash",
+    contents: [
+        {
+            inlineData: {
+                mimeType: req.file.mimetype,
+                data: imageBase64,
+            },
+        },
+        {
+            text: `
+You are a food donation assistant.
+
+Analyze this image and reply ONLY in this format:
+
+Food:
+Estimated Meals:
+Freshness:
+Pickup Before:
+`
+        }
+    ]
+});
+
+res.json({
+    success: true,
+    analysis: response.text
+});
 
     } catch (error) {
         console.error(error);

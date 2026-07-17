@@ -59,7 +59,7 @@ fetch("http://localhost:3000/analyze-food", {
 .then(response => response.json())
 .then(data => {
     console.log(data);
-    alert(data.message);
+    alert(data.analysis);
 })
 .catch(error => {
     console.error(error);
