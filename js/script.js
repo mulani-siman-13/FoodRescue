@@ -49,6 +49,21 @@ if (analyzeBtn) {
             return;
         }
 
-        alert("Image selected successfully! 🎉");
+        const formData = new FormData();
+formData.append("foodImage", image.files[0]);
+
+fetch("http://localhost:3000/analyze-food", {
+    method: "POST",
+    body: formData
+})
+.then(response => response.json())
+.then(data => {
+    console.log(data);
+    alert(data.message);
+})
+.catch(error => {
+    console.error(error);
+    alert("Failed to send image.");
+});
     });
 }

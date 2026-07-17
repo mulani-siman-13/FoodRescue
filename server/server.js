@@ -2,12 +2,15 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import { GoogleGenAI } from "@google/genai";
+import multer from "multer";
 
 dotenv.config();
 
 const ai = new GoogleGenAI({
     apiKey: process.env.GEMINI_API_KEY,
 });
+
+const upload = multer({ storage: multer.memoryStorage() });
 
 console.log(process.env.GEMINI_API_KEY ? "✅ API Key Loaded" : "❌ API Key Missing");
 
@@ -31,6 +34,32 @@ app.get("/test-ai", async (req, res) => {
     } catch (error) {
         console.error(error);
         res.status(500).send("Gemini Error");
+    }
+});
+
+app.post("/analyze-food", upload.single("foodImage"), async (req, res) => {
+    try {
+        if (!req.file) {
+            return res.status(400).json({
+                success: false,
+                message: "No image received."
+            });
+        }
+
+        console.log("Image received:", req.file.originalname);
+
+        res.json({
+            success: true,
+            message: "Image received successfully!",
+            fileName: req.file.originalname
+        });
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({
+            success: false,
+            message: "Server error"
+        });
     }
 });
 
