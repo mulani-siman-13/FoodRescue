@@ -38,6 +38,28 @@ L.marker([18.5318,73.8477]).addTo(map)
 .bindPopup("<b>Hotel Rupali</b><br>🥘 21 Meals Available");
 }
 
+const fileInput = document.getElementById("foodImage");
+const fileName = document.getElementById("fileName");
+
+if (fileInput && fileName) {
+
+    fileInput.addEventListener("change", () => {
+
+        if (fileInput.files.length > 0) {
+
+            fileName.textContent =
+                "📷 " + fileInput.files[0].name;
+
+        } else {
+
+            fileName.textContent =
+                "No file selected";
+
+        }
+
+    });
+
+}
 const analyzeBtn = document.getElementById("analyzeBtn");
 
 if (analyzeBtn) {
