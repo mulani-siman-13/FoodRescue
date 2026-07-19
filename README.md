@@ -193,7 +193,6 @@ node server.js
 Open the project using **Live Server** in VS Code.
 
 ---
-
 # 📸 Project Screenshots
 
 <table>
