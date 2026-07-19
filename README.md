@@ -202,8 +202,8 @@ Open the project using **Live Server** in VS Code.
 </tr>
 
 <tr>
-<td><img src="screenshots/home.png" width="100%"></td>
-<td><img src="screenshots/ai-analysis.png" width="100%"></td>
+<td><img src="screenshots/home.PNG" width="100%"></td>
+<td><img src="screenshots/ai-analysis.PNG" width="100%"></td>
 </tr>
 
 <tr>
@@ -212,8 +212,8 @@ Open the project using **Live Server** in VS Code.
 </tr>
 
 <tr>
-<td><img src="screenshots/live-donations.png" width="100%"></td>
-<td><img src="screenshots/live-map.png" width="100%"></td>
+<td><img src="screenshots/live-donations.PNG" width="100%"></td>
+<td><img src="screenshots/live-map.PNG" width="100%"></td>
 </tr>
 
 <tr>
@@ -222,8 +222,8 @@ Open the project using **Live Server** in VS Code.
 </tr>
 
 <tr>
-<td><img src="screenshots/my-pickups.png" width="100%"></td>
-<td><img src="screenshots/about.png" width="100%"></td>
+<td><img src="screenshots/my-pickups.PNG" width="100%"></td>
+<td><img src="screenshots/about.PNG" width="100%"></td>
 </tr>
 </table>
 
