@@ -202,7 +202,7 @@ Open the project using **Live Server** in VS Code.
 </tr>
 
 <tr>
-<td><img src="screenshots/home.PNG" width="100%"></td>
+<td><img src="screenshots/about.PNG" width="100%"></td>
 <td><img src="screenshots/ai-analysis.PNG" width="100%"></td>
 </tr>
 
@@ -223,7 +223,7 @@ Open the project using **Live Server** in VS Code.
 
 <tr>
 <td><img src="screenshots/my-pickups.PNG" width="100%"></td>
-<td><img src="screenshots/about.PNG" width="100%"></td>
+<td><img src="screenshots/About.PNG" width="100%"></td>
 </tr>
 </table>
 
