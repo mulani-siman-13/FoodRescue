@@ -202,7 +202,7 @@ Open the project using **Live Server** in VS Code.
 </tr>
 
 <tr>
-<td><img src="screenshots/about.PNG" width="100%"></td>
+<td><img src="screenshots/Home.PNG" width="100%"></td>
 <td><img src="screenshots/ai-analysis.PNG" width="100%"></td>
 </tr>
 
