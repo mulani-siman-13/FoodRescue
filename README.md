@@ -196,28 +196,37 @@ Open the project using **Live Server** in VS Code.
 
 # 📸 Project Screenshots
 
-> *(Add screenshots after uploading them to GitHub.)*
+<table>
+<tr>
+<td align="center"><strong>🏠 Home Page</strong></td>
+<td align="center"><strong>🤖 AI Food Analysis</strong></td>
+</tr>
 
-- 🏠 Home Page
-- 🍴 Restaurant Portal
-- 🤖 AI Food Analysis
-- 📦 Live Donations
-- 🚚 My Pickups
-- ℹ️ About Page
+<tr>
+<td><img src="screenshots/home.png" width="100%"></td>
+<td><img src="screenshots/ai-analysis.png" width="100%"></td>
+</tr>
 
----
+<tr>
+<td align="center"><strong>📍 Live Donations</strong></td>
+<td align="center"><strong>🗺️ Live Map</strong></td>
+</tr>
 
-# 🔮 Future Scope
+<tr>
+<td><img src="screenshots/live-donations.png" width="100%"></td>
+<td><img src="screenshots/live-map.png" width="100%"></td>
+</tr>
 
-- 📱 Mobile application
-- 🔔 Real-time NGO notifications
-- 🧭 AI-based pickup route optimization
-- 📊 Donation analytics dashboard
-- 🏢 Restaurant verification system
-- 🌐 Multi-city support
-- 📦 Live inventory management
+<tr>
+<td align="center"><strong>🚚 My Pickups</strong></td>
+<td align="center"><strong>ℹ️ About Page</strong></td>
+</tr>
 
----
+<tr>
+<td><img src="screenshots/my-pickups.png" width="100%"></td>
+<td><img src="screenshots/about.png" width="100%"></td>
+</tr>
+</table>
 
 # 👥 Team Humanova
 
