@@ -12,7 +12,7 @@ Restaurants can upload details of surplus food, while NGOs can discover nearby d
 
 Millions of meals are wasted every day by restaurants, hotels, and catering services, while many people continue to face food insecurity. NGOs often struggle to identify available food donations quickly enough before the food becomes unsuitable for consumption.
 
-There is a need for a smart platform that efficiently connects food donors with organizations that can distribute surplus food to those in need.
+There is a need for a smart platform that efficiently connects food donors with organizations that can distribute surplus food to those in need and dont have any source of food.
 
 ---
 
